@@ -1,4 +1,7 @@
-import { Droplets, MapPin, Search, Sun, Thermometer, Wind } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { Droplets, MapPin, Search, Sun, Thermometer, Wind, X } from 'lucide-react'
 
 const hourlyForecast = [
   { time: 'Now', temperature: '23°' },
@@ -15,6 +18,17 @@ const details = [
 ]
 
 export default function Page() {
+  const [isSearching, setIsSearching] = useState(false)
+  const [query, setQuery] = useState('')
+  const [city, setCity] = useState('Tashkent')
+
+  function submitSearch() {
+    const nextCity = query.trim()
+    if (nextCity) setCity(nextCity)
+    setQuery('')
+    setIsSearching(false)
+  }
+
   return (
     <main className="weather-shell">
       <section className="hero-panel" aria-label="Current weather">
@@ -23,7 +37,7 @@ export default function Page() {
           <div className="brand" aria-label="Aura weather">AURA<span>°</span></div>
 
           <div className="current-weather">
-            <div className="location"><MapPin size={21} strokeWidth={1.8} /> <span>Tashkent, UZ</span></div>
+            <div className="location"><MapPin size={21} strokeWidth={1.8} /> <span>{city}, UZ</span></div>
             <div className="temperature-row">
               <p className="temperature">24°</p>
               <div className="condition-mark">
@@ -43,8 +57,18 @@ export default function Page() {
 
       <aside className="details-panel" aria-label="Weather forecast details">
         <header className="city-header">
-          <span>Tashkent</span>
-          <button className="icon-button" aria-label="Search city"><Search size={26} strokeWidth={1.8} /></button>
+          {isSearching ? (
+            <form className="city-search" onSubmit={(event) => { event.preventDefault(); submitSearch() }}>
+              <label className="sr-only" htmlFor="city-search">Search city</label>
+              <input id="city-search" autoFocus value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search city" />
+              <button className="icon-button" type="submit" aria-label="Submit search"><Search size={23} strokeWidth={1.8} /></button>
+              <button className="icon-button" type="button" aria-label="Close search" onClick={() => { setQuery(''); setIsSearching(false) }}><X size={23} strokeWidth={1.8} /></button>
+            </form>
+          ) : (
+            <>
+              <span>{city}</span>
+              <button className="icon-button" aria-label="Search city" onClick={() => setIsSearching(true)}><Search size={26} strokeWidth={1.8} /></button>
+            </>)}
         </header>
 
         <div className="details-content">

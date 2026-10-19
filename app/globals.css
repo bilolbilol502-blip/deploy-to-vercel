@@ -42,11 +42,21 @@ button { font: inherit; }
 }
 .rain-layer {
   position: absolute;
-  inset: 0;
+  inset: -180px -120px;
   opacity: .73;
   background-image: linear-gradient(113deg, transparent 0 47%, rgba(166, 209, 221, .46) 48%, transparent 49% 100%), radial-gradient(circle at 22% 40%, rgba(207,238,244,.65) 0 2px, transparent 2.5px), radial-gradient(circle at 73% 31%, rgba(207,238,244,.5) 0 1.5px, transparent 2px);
   background-size: 115px 170px, 165px 210px, 215px 260px;
   mask-image: linear-gradient(to bottom, #000, rgba(0,0,0,.78));
+  animation: rain-fall 1.4s linear infinite;
+}
+
+@keyframes rain-fall {
+  from { transform: translate3d(0, -20px, 0); }
+  to { transform: translate3d(-115px, 170px, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rain-layer { animation: none; }
 }
 .hero-content { position: relative; display: flex; flex-direction: column; height: 100%; min-height: 100vh; padding: 0 clamp(44px, 8vw, 128px); }
 .brand { padding-top: 7px; font-size: clamp(30px, 3.3vw, 46px); font-weight: 800; letter-spacing: .27em; line-height: 1; }
@@ -63,6 +73,10 @@ button { font: inherit; }
 .details-panel { background: var(--panel); }
 .city-header { display: flex; align-items: center; justify-content: space-between; margin: 0 7.2%; padding: 16px 0 20px; border-bottom: 1px solid rgba(156, 201, 210, .19); font-size: 20px; }
 .icon-button { display: grid; place-items: center; border: 0; padding: 0; color: #b8e0e9; background: transparent; cursor: pointer; }
+.city-search { display: flex; align-items: center; gap: 12px; width: min(100%, 290px); }
+.city-search input { min-width: 0; flex: 1; border: 0; border-bottom: 1px solid rgba(184, 224, 233, .55); padding: 3px 0 7px; outline: 0; color: var(--ink); background: transparent; font-size: 18px; }
+.city-search input::placeholder { color: #8eafb7; }
+.city-search input:focus { border-color: var(--cyan); }
 .details-content { padding: 78px 7.2% 40px; }
 .section-heading, .forecast-title { display: flex; align-items: center; gap: 15px; color: #a8cbd5; font-size: 17px; letter-spacing: .09em; }
 .section-heading i { width: 25px; height: 25px; margin-left: auto; border-radius: 50%; background: rgba(220, 174, 56, .18); position: relative; }
