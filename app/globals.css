@@ -4,160 +4,91 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --color-foreground: var(--foreground);
-  --color-background: var(--background);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
-}
-
 :root {
-  color-scheme: light;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
   color-scheme: dark;
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --ink: #f6f8f8;
+  --muted: #aeb9bd;
+  --cyan: #89d3e5;
+  --gold: #dcae38;
+  --navy: #071b29;
+  --panel: #092a38;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    color-scheme: dark;
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
-  }
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  background: #061723;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
 }
+button { font: inherit; }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+.weather-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(430px, .82fr);
+  min-height: 100vh;
+  max-width: 1500px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--panel);
+}
+.hero-panel {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #102d3c, #071a28 72%);
+  border-radius: 0 0 0 30px;
+}
+.rain-layer {
+  position: absolute;
+  inset: 0;
+  opacity: .73;
+  background-image: linear-gradient(113deg, transparent 0 47%, rgba(166, 209, 221, .46) 48%, transparent 49% 100%), radial-gradient(circle at 22% 40%, rgba(207,238,244,.65) 0 2px, transparent 2.5px), radial-gradient(circle at 73% 31%, rgba(207,238,244,.5) 0 1.5px, transparent 2px);
+  background-size: 115px 170px, 165px 210px, 215px 260px;
+  mask-image: linear-gradient(to bottom, #000, rgba(0,0,0,.78));
+}
+.hero-content { position: relative; display: flex; flex-direction: column; height: 100%; min-height: 100vh; padding: 0 clamp(44px, 8vw, 128px); }
+.brand { padding-top: 7px; font-size: clamp(30px, 3.3vw, 46px); font-weight: 800; letter-spacing: .27em; line-height: 1; }
+.brand span { color: var(--gold); font-size: .55em; vertical-align: top; margin-left: 2px; }
+.current-weather { margin-top: auto; margin-bottom: 10%; }
+.location { display: flex; align-items: center; gap: 12px; font-size: clamp(18px, 1.7vw, 23px); font-weight: 600; color: #d5d9dc; }
+.temperature-row { display: flex; align-items: center; gap: clamp(44px, 7vw, 90px); margin-top: 22px; }
+.temperature { margin: 0; font-size: clamp(130px, 15vw, 220px); line-height: .8; letter-spacing: -.09em; font-weight: 500; }
+.condition-mark { display: flex; flex-direction: column; gap: 14px; align-items: center; color: var(--ink); font-size: 21px; }
+.condition-mark svg { color: #fff; }
+.date { margin: 43px 0 0; font-size: 20px; font-weight: 600; color: var(--muted); }
+.live-status { align-self: flex-end; display: flex; flex-direction: column; align-items: flex-end; gap: 7px; margin-bottom: 7%; color: var(--muted); font-size: 16px; letter-spacing: .04em; }
+.live-status strong { color: #b39143; font-size: 17px; font-weight: 400; }
+.details-panel { background: var(--panel); }
+.city-header { display: flex; align-items: center; justify-content: space-between; margin: 0 7.2%; padding: 16px 0 20px; border-bottom: 1px solid rgba(156, 201, 210, .19); font-size: 20px; }
+.icon-button { display: grid; place-items: center; border: 0; padding: 0; color: #b8e0e9; background: transparent; cursor: pointer; }
+.details-content { padding: 78px 7.2% 40px; }
+.section-heading, .forecast-title { display: flex; align-items: center; gap: 15px; color: #a8cbd5; font-size: 17px; letter-spacing: .09em; }
+.section-heading i { width: 25px; height: 25px; margin-left: auto; border-radius: 50%; background: rgba(220, 174, 56, .18); position: relative; }
+.section-heading i::after { content: ''; position: absolute; width: 9px; height: 9px; inset: 8px; border-radius: 50%; background: var(--gold); }
+.details-content h1 { margin: 32px 0 38px; font-size: 30px; font-weight: 400; }
+.metric-list { display: grid; gap: 31px; padding-bottom: 64px; border-bottom: 1px solid rgba(156, 201, 210, .2); }
+.metric { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; color: #a7dbe8; font-size: 19px; }
+.metric strong { color: var(--ink); font-size: 19px; font-weight: 500; }
+.forecast-section { padding-top: 41px; }
+.forecast-list { display: grid; gap: 24px; margin-top: 35px; }
+.forecast-row { display: grid; grid-template-columns: 1fr 37px 29px; align-items: center; gap: 15px; color: #9fd0df; font-size: 18px; }
+.forecast-row svg { color: var(--gold); }
+.forecast-row strong { color: var(--ink); font-weight: 500; }
+
+@media (max-width: 760px) {
+  .weather-shell { display: block; }
+  .hero-panel { min-height: 65vh; border-radius: 0 0 0 24px; }
+  .hero-content { min-height: 65vh; padding: 0 28px; }
+  .current-weather { margin-bottom: 42px; }
+  .temperature { font-size: clamp(100px, 28vw, 170px); }
+  .temperature-row { gap: 24px; }
+  .condition-mark { font-size: 16px; }
+  .condition-mark svg { width: 42px; }
+  .date { margin-top: 30px; font-size: 17px; }
+  .live-status { margin-bottom: 28px; font-size: 13px; }
+  .live-status strong { font-size: 13px; }
+  .details-content { padding: 44px 28px 38px; }
+  .city-header { margin: 0 28px; }
 }
